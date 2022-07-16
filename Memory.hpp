@@ -268,6 +268,7 @@ namespace WdRiscv
     bool peek(size_t address, T& value, bool usePma, bool toMain=false) const
     {
       toMain |= not usePma;
+      (void)toMain; // Unused
       if (address + sizeof(T) > size_)
         return false;
 
@@ -423,6 +424,8 @@ namespace WdRiscv
     bool poke(size_t address, T value, bool usePma = true, bool toMain=false)
     {
       toMain |= not usePma;
+      (void)toMain; // Unused
+
       if (address + sizeof(T) > size_)
         return false;
 

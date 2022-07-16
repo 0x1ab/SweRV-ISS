@@ -57,6 +57,8 @@ DecodedInst::fetchOperands(const Hart<URV>& hart)
 
 	case OperandType::None:
 	  break;
+  default:
+    assert(false);
 	}
 
       assert(i < sizeof(values_));

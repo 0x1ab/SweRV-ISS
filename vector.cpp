@@ -15758,8 +15758,8 @@ namespace std
 
 
 template<>
-Float16
-std::numeric_limits<Float16>::quiet_NaN()
+constexpr Float16
+std::numeric_limits<Float16>::quiet_NaN() noexcept
 {
   return Float16::quietNan();
 }

@@ -189,7 +189,7 @@ namespace WdRiscv
   public:
 
     /// Default constructor: value will be zero.
-    Float16()
+    constexpr Float16()
       : i16(0)
     { }
 
@@ -228,10 +228,10 @@ namespace WdRiscv
     float toFloat() const;
 
     /// Convert this Float16 to a float.
-    explicit operator float() const { return this->toFloat(); }
+    operator float() const { return this->toFloat(); }
 
     /// Convert this Float16 to a double.
-    explicit operator double() const { return this->toFloat(); }
+    operator double() const { return this->toFloat(); }
 
     /// Return the sign bit of this Float16 in the least significant
     /// bit of the result.
@@ -302,15 +302,15 @@ namespace WdRiscv
     { x.i16 &= 0x7fff;  x.i16 |= (y.i16 >> 15 << 15); return x; }
 
     /// Return the quiet NAN Float16 number.
-    static Float16 quietNan()
+    static constexpr Float16 quietNan()
     { Float16 x; x.i16 = 0b0111'1110'0000'0000; return x; }
 
     /// Return the quiet NAN Float16 number.
-    static Float16 signalingNan()
+    static constexpr Float16 signalingNan()
     { Float16 x; x.i16 = 0b0111'1101'0000'0000; return x; }
 
     /// Return infinity in Float16.
-    static Float16 infinity()
+    static constexpr Float16 infinity()
     { Float16 x; x.i16 = 0b0111'1100'0000'0000; return x; }
 
   private:

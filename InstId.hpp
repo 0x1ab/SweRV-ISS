@@ -14,6 +14,8 @@
 
 #pragma once
 
+#include <stdint.h>
+
 namespace WdRiscv
 {
   /// Associate a unique integer identifier with each instruction.

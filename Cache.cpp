@@ -25,6 +25,8 @@ using namespace WdRiscv;
 Cache::Cache(uint64_t totalSize, unsigned lineSize, unsigned setSize)
   : size_(totalSize), lineSize_(lineSize), setSize_(setSize)
 {
+  (void)lineSize_; // unused
+  (void)size_;
   unsigned logSize = static_cast<unsigned>(std::log2(totalSize));
   uint64_t p2Size = uint64_t(1) << logSize;
   assert(p2Size == totalSize);

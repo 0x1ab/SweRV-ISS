@@ -200,7 +200,8 @@ namespace WdRiscv
     bool changeMemMappedBase(uint64_t newBase);
 
   private:
-    struct MemMappedRegister {
+    class MemMappedRegister {
+    public:
       	uint64_t data;
       	uint64_t mask;
       	uint8_t size;
